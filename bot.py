@@ -91,7 +91,7 @@ async def on_message(message):
         for i in history:
             content_list = []
 
-            text_val = i.clean_content if i.author == client.user else f"{i.author}: {i.clean_content.replace('<@YOUR_BOT_ID_HERE>', '@glorp')}"
+            text_val = i.clean_content if i.author == client.user else f"{i.author}: {i.clean_content.replace('<@1495228712986218517>', '@glorp')}"
 
             if text_val.strip():
                 content_list.append({"type": "text", "text": text_val})
@@ -122,9 +122,9 @@ async def on_message(message):
             response_obj = client_ai.chat.completions.create(
                 model=model,
                 messages=messages,
-                temperature=1.2,
-                top_p=0.95,
-                frequency_penalty=0.4,
+                temperature=1.4,
+                top_p=0.9,
+                frequency_penalty=0.8,
             )
             response = response_obj.choices[0].message.content
 
